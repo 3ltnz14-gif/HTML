@@ -6,6 +6,8 @@
     <body>
         <h1> Form </h1>
         <form>
+            <fieldset>
+            <legend>--Form--</legend>
             <label>Name</label><br>
             <input type="text" id="name" ><br>
             <label>Email</label><br>
@@ -14,11 +16,21 @@
             <input type="password" id="password"><br>
             <label>Gender</label><br>
             <input type="radio" id="male" name="gender">Male<br>
-            <input type="radio" id="female" name="gender">Female<br>
+            <input type="radio" id="female" name="gender">Female<br><br>
             <label>Favourite Color(s)</label><br>
             <input type="checkbox" id="red" name="color">Red<br>
             <input type="checkbox" id="blue" name="color">Blue<br>
-            <input type="checkbox" id="green" name="color">Green<br>
+            <input type="checkbox" id="green" name="color">Green<br><br>
+            <label>Favourite Subject</label><br>
+            <select>
+                <option>Math</option>
+                <option>Literacy</option>
+                <option>P.E.</option>
+            </select><br><br>
+            <label>Date of Birth</label><br>
+            <input type="date" name="dob" id="dob"><br><br>
             <input type="submit" value="Submit">
+            </fieldset>
         </form>
+        
 </html>
