@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>h8</title>
+        <style>
+            body{
+                    background-color: darkgreen;
+                    background-image: url("image_3.jpg");
+                    background-repeat: no-repeat;
+                    background-attachment: scroll;
+                    background-position: top LEFT;
+            }
+            #grad1{
+                background-color: red;
+                height: 500px;
+                width: 500px;
+                background-image: radial-gradient(red, orange, yellow, green, blue, indigo, violet);
+            }
+            @keyframes animation {
+            0% {background-color: red;}
+            100% {background-color: blue;}
+            }
+
+            #anim-1 {
+            width: 1000px;
+            height: 1000px;
+            background-color: red;
+            animation-name: animation;
+            animation-duration: 20s;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="grad1">
+            radial gradient
+        </div>
+        <div id="anim-1">
+            hi
+        </div>
+    </body>
+</html>
