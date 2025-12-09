@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Functions</title>
+    </head>
+    <body>
+        <button onclick="myfunction(7)">Function</button>
+        <p id="something"></p>
+        <script>
+            function myfunction(x, y) {
+                if (y=== undefined) {
+                    y = 6;
+                }
+                document.getElementById("something").innerHTML = x * y;
+                document.write(x * y);
+            }
+        </script>
+    </body>
+</html>
