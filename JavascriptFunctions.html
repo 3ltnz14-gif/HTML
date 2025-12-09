@@ -4,6 +4,7 @@
         <title>Functions</title>
     </head>
     <body>
+        <h1>Button and onclick</h1>
         <button onclick="myfunction(7)">Function</button>
         <p id="something"></p>
         <script>
@@ -14,6 +15,12 @@
                 document.getElementById("something").innerHTML = x * y;
                 document.write(x * y);
             }
+        </script>
+
+        <h1>Function Declaration</h1>
+        <script>
+            var result = function (a, b) {return a * b};
+            document.write(result(9, 10));
         </script>
     </body>
 </html>
