@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>For loop</title>
+    </head>
+    <body>
+        <h1>This is the for loop:</h1>
+        <p id="fruits"></p>
+        <script>
+            var fruits = ["Apple", "Mango", "Grapes", "Watermelon", "Jack Fruit", "Banana"] 
+            var text = ""
+            for (i = 0; i < fruits.length; i++) {
+                text += fruits[i] + "<br>";
+            }
+            document.getElementById("fruits").innerHTML = text;
+        </script>
+    </body>
+</html>
