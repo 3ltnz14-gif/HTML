@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+    </script>
+        <title>Calculator</title>
+    </head>
+    <body>
+        <h1><u>A Simple Calculator!</u></h1>
+        <p>Go into the code and change the <code>num1</code>
+         and <code>num2</code> variables to use this.</p>
+        <p id="result"></p>
+        <p id="result2"></p>
+        <p id="result3"></p>
+        <p id="result4"></p>
+        <p id="result5"></p>
+        <p id="result6"></p>
+
+<h3>Change num1:</h3>
+<button id="add1" class="bg-info">Add 1 to var1</button> 
+<button id="num1Add10" class="bg-info">Add 10</button>
+<button id="num1Add100" class="bg-info">Add 100</button>
+<button id="num1Add1000" class="bg-info">Add 1,000</button>
+<button id="num1Add10000" class="bg-info">Add 10,000</button>
+<button id="num1Add100000" class="bg-info">Add 100,000</button>
+<button id="num1Add1000000" class="bg-info">Add 1,000,000</button>
+<button id="subtract1" class="bg-info">Subtract 1 from var1</button> 
+<button id="num1Sub10" class="bg-info">Subtract 10</button>
+<button id="num1Sub100" class="bg-info">Subtract 100</button>
+<button id="num1Sub1000" class="bg-info">Subtract 1,000</button>
+<button id="num1Sub10000" class="bg-info">Subtract 10,000</button>
+<button id="num1Sub100000" class="bg-info">Subtract 100,000</button>
+<button id="num1Sub1000000" class="bg-info">Subtract 1,000,000</button>
+
+<h3>Change num2:</h3>
+<button id="add2" class="bg-info">Add 1 to var2</button> 
+<button id="num2Add10" class="bg-info">Add 10</button>
+<button id="num2Add100" class="bg-info">Add 100</button>
+<button id="num2Add1000" class="bg-info">Add 1,000</button>
+<button id="num2Add10000" class="bg-info">Add 10,000</button>
+<button id="num2Add100000" class="bg-info">Add 100,000</button>
+<button id="num2Add1000000" class="bg-info">Add 1,000,000</button>
+<button id="subtract2" class="bg-info">Subtract 1 from var2</button>
+<button id="num2Sub10" class="bg-info">Subtract 10</button>
+<button id="num2Sub100" class="bg-info">Subtract 100</button>
+<button id="num2Sub1000" class="bg-info">Subtract 1,000</button>
+<button id="num2Sub10000" class="bg-info">Subtract 10,000</button>
+<button id="num2Sub100000" class="bg-info">Subtract 100,000</button>
+<button id="num2Sub1000000" class="bg-info">Subtract 1,000,000</button>
+        <h2>You can also go into the code and change the <code>num1</code>
+         and <code>num2</code> variables to use this.</h2>
+
+        <script>
+            //This is a comment.;
+            //Change the two below variables' values.;
+            var num1 = 7;
+            var num2 = 6;
+            //Do not touch any of the code between this comment and the last;
+            function updateResults() {
+                var add = num1 + num2;
+                var subtract = num1 - num2;
+                var multiply = num1 * num2;
+                var divide = num1 / num2;
+                var square1 = num1 * num1;
+                var square2 = num2 * num2;
+
+                document.getElementById("result").innerHTML = num1 + " + " + num2 + " = " + add;
+                document.getElementById("result2").innerHTML = num1 + " - " + num2 + " = " + subtract;
+                document.getElementById("result3").innerHTML = num1 + " * " + num2 + " = " + multiply;
+                document.getElementById("result4").innerHTML = num1 + " / " + num2 + " = " + divide;
+                document.getElementById("result5").innerHTML = num1 + "<sup>2</sup> = " + square1;
+                document.getElementById("result6").innerHTML = num2 + "<sup>2</sup> = " + square2;
+            }
+            //I used ChatGPT's "study" function to learn how to use buttons and functions (above and below)
+
+                updateResults()
+
+document.getElementById("add1").onclick = function() { num1 += 1; updateResults(); };
+document.getElementById("subtract1").onclick = function() { num1 -= 1; updateResults(); };
+
+document.getElementById("num1Add10").onclick = function() { num1 += 10; updateResults(); };
+document.getElementById("num1Add100").onclick = function() { num1 += 100; updateResults(); };
+document.getElementById("num1Add1000").onclick = function() { num1 += 1000; updateResults(); };
+document.getElementById("num1Add10000").onclick = function() { num1 += 10000; updateResults(); };
+document.getElementById("num1Add100000").onclick = function() { num1 += 100000; updateResults(); };
+document.getElementById("num1Add1000000").onclick = function() { num1 += 1000000; updateResults(); };
+
+document.getElementById("num1Sub10").onclick = function() { num1 -= 10; updateResults(); };
+document.getElementById("num1Sub100").onclick = function() { num1 -= 100; updateResults(); };
+document.getElementById("num1Sub1000").onclick = function() { num1 -= 1000; updateResults(); };
+document.getElementById("num1Sub10000").onclick = function() { num1 -= 10000; updateResults(); };
+document.getElementById("num1Sub100000").onclick = function() { num1 -= 100000; updateResults(); };
+document.getElementById("num1Sub1000000").onclick = function() { num1 -= 1000000; updateResults(); };
+
+document.getElementById("add2").onclick = function() { num2 += 1; updateResults(); };
+document.getElementById("subtract2").onclick = function() { num2 -= 1; updateResults(); };
+
+document.getElementById("num2Add10").onclick = function() { num2 += 10; updateResults(); };
+document.getElementById("num2Add100").onclick = function() { num2 += 100; updateResults(); };
+document.getElementById("num2Add1000").onclick = function() { num2 += 1000; updateResults(); };
+document.getElementById("num2Add10000").onclick = function() { num2 += 10000; updateResults(); };
+document.getElementById("num2Add100000").onclick = function() { num2 += 100000; updateResults(); };
+document.getElementById("num2Add1000000").onclick = function() { num2 += 1000000; updateResults(); };
+
+document.getElementById("num2Sub10").onclick = function() { num2 -= 10; updateResults(); };
+document.getElementById("num2Sub100").onclick = function() { num2 -= 100; updateResults(); };
+document.getElementById("num2Sub1000").onclick = function() { num2 -= 1000; updateResults(); };
+document.getElementById("num2Sub10000").onclick = function() { num2 -= 10000; updateResults(); };
+document.getElementById("num2Sub100000").onclick = function() { num2 -= 100000; updateResults(); };
+document.getElementById("num2Sub1000000").onclick = function() { num2 -= 1000000; updateResults(); };
+        </script>
+    </body>
