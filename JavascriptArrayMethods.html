@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Arrays</title></head>
+    <body>
+        <h1>Arrays in HTML/JS</h1>
+        <p>Arrays are similar to objects, but it uses a key-number instead of a key-word.</p>
+        <p id="join"></p>
+        <p id="pop"></p>
+        <p id="pop2"></p>
+        <script>
+            var array = [
+                "first", "second", "third"
+            ];
+            document.getElementById("join").innerHTML = array.join(", ");
+            document.getElementById("pop").innerHTML = array.join(" ");
+            array.pop();
+            document.getElementById("pop2").innerHTML = array.join(" ");
+
+        </script>
+    </body>
+</html>
