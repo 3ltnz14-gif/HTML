@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Conditional Statements</title></head>
+    <body>
+        <p id="demo"></p>
+        <script>
+            var a = 1
+            function greeting(a) {
+                var greeting;
+                var time = new Date().getHours();
+
+                if (time < 10) {
+                    var greeting = "Good Morning!";
+                } else if (time < 20) {
+                    var greeting = "Good Day!";
+                } else {
+                    var greeting = "Good Evening";
+                }
+                if (a == true) {
+                    alert(greeting + " The time is " + time);
+                } else {
+                    return greeting + " The time is " + time;
+                }
+            }
+
+            document.getElementById("demo").innerHTML = greeting();
+        </script>
+    </body>
+</html>
