@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head><title>While Loop</title></head>
+    <body>
+        <p id="demo"></p>
+        <script>
+            var text = 0;
+            var i = 0;
+            while (i < 101) {
+                if (i % 10 == 0) {
+                    text += "<br> " + i;
+                } else {
+                    text += " " + i;
+                }
+                i++;
+            }
+            document.write(text);
+        </script>
+    </body>
+</html>
