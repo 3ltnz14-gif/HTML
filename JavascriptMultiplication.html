@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multiplication</title>
+    </head>
+    <body>
+        <p id="demo"></p>
+        <script>
+            function multiply(x, y) {
+                if (x === undefined) {
+                    alert ("You have to input 2 parameters!")
+                } else if (y === undefined) {
+                    alert ("The second parameter is undefined!")
+                } else {
+                    return x * y
+                }
+            }
+            //replace the parameters in the multiply function for it to work
+            document.getElementById("demo").innerHTML = multiply(100, 10)
+        </script>
+    </body>
+</html>
