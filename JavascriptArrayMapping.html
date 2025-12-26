@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Array mapping;</title>
+    </head>
+    <body>
+        <p>Original array: </p><code>var numbers = [231, 21380, 1362, 1264739, 73, 1];</code>
+        <p id="demo"></p>
+        <script>
+            var numbers = [231, 21380, 1362, 1264739, 73, 1];
+            function ascending() {
+            numbers.sort(function(a, b){return a - b});
+            }
+            function myFunction(num) {
+                return num * 10;
+            }
+            ascending()
+            var newarray = numbers.map(myFunction);
+            document.getElementById("demo").innerHTML = newarray;
+        </script>
+    </body>
+</html>
