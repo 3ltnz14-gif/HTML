@@ -8,6 +8,10 @@
         <p id="demo"></p>
         <button onclick="ascending()">Ascending Order</button>
         <button onclick="descending()">Descending Order</button>
+        <code>var strings = ["apple", "banana", "pear", "orange", "lemon", "mango"]</code>
+        <p id="demo1"></p>
+        <button onclick="sortfunction()">Sort</button>
+        <button onclick="reversefunction()">Reverse</button>
         <script>
             var numbers = [231, 21380, 1362, 1264739, 73, 1];
             function ascending() {
@@ -17,6 +21,15 @@
             function descending() {
                 numbers.sort(function(a, b){return b - a});
                 document.getElementById("demo").innerHTML = numbers;
+            }
+            var strings = ["apple", "banana", "pear", "orange", "lemon", "mango"]
+            function sortfunction() {
+                strings.sort();
+                document.getElementById("demo1").innerHTML = strings;
+            }
+            function reversefunction() {
+                strings.reverse();
+                document.getElementById("demo1").innerHTML = strings;
             }
         </script>
     </body>
