@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Evaluation</title>
+    </head>
+    <body>
+        <p id="demo"></p>
+        <button onclick="something()">Press to trigger the function!</button>
+        <script>
+            function something() {
+                var x = 10;
+                var y = 20;
+                var a = eval(x + 20);
+                var b = eval("y * 2");
+                var c = eval(y - 10);
+                var result = a + "+" + b + "+" + c + "=" + eval("a + b + c");
+                document.getElementById("demo").innerHTML = result;
+            }
+        </script>
+    </body>
+</html>
