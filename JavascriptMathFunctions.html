@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Math</title></head>
+    <body>
+        <p id="demo"></p>
+        <script>
+            function countto10() {
+                let text = ""
+                let i = 1
+                while(i < 11) {
+                    text += i + ", "
+                    i++
+                }
+                return text
+            }
+            document.getElementById("demo").innerHTML = countto10();
+        </script>
+    </body>
+</html>
