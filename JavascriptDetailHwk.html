@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Javascript Error Handling, String(), and Arrow Function</title></head>
+    <body>
+        <p id="demo"></p>
+        <p id="demo1"></p>
+        <script>
+            var number = 312
+            var number1 = 132
+            multiply = (a, b) => a * b;
+            document.getElementById("demo").innerHTML = multiply(321, 123);
+            try {
+                documentw.rite(multiply(123, 235));
+            } catch(err) {
+                document.getElementById("demo1").innerHTML = err.message;
+            }
+            document.write(eval(String(number1 * number)));
+        </script>
+    </body>
+</html>
