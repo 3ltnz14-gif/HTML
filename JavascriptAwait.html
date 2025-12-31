@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Await</title>
+    </head>
+    <body>
+        <p id="demo"></p>
+        <script>
+            async function add(a,b) {
+                let response = await a + b;
+                display(response);
+            }
+            function display(x) {
+                document.getElementById("demo").innerHTML = x;
+            }
+            add(12345, 98765);
+        </script>
+    </body>
+</html>
