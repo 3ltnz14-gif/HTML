@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Callbacks</title>
+    </head>
+    <body>
+        <p id="demo"></p>
+        <script>
+            function display(value, id) {
+                document.getElementById(id).innerHTML = value;
+            }
+            function add(num1, num2, myCallback) {
+                let sum = num1 + num2;
+                myCallback(sum, "demo");
+            }
+            add(12345, 98765, display)
+        </script>
+    </body>
+</html>
