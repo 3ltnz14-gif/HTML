@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript JSON</title>
+    </head>
+    <body>
+        <p id="demo"></p>
+        <script>
+            var firstvar = {
+                first: "1st",
+                second: "2nd",
+                third: "3rd",
+            };
+            var myJSON = JSON.stringify(firstvar);
+            var newvar = JSON.parse(myJSON);
+
+            document.getElementById("demo").innerHTML = newvar.third;
+        </script>
+    </body>
+</html>
