@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form name="Myform" onsubmit="validate();" legend="Login Page">
+            <p>Name:</p>
+            <input type="text" name="fname" required>
+            <p>Age:</p>
+            <input type="number" name="age" min="18" max="100" required>
+            <br><br><input type="submit" value="Login" style="border: 1px solid black; background-color: 
+            green; color: white;">
+        </form>
+        
+        <script>
+            function validate() {
+                var x = document.getElementById("fname");
+                var y = document.getElementById("age");
+                if (!x.checkValidity()) {
+                    alert(x.validationMessage);
+                } else if (!y.checkValidity()) {
+                    alert(y.validationMessage);
+                } else {
+                    alert("Login Successful");
+                }
+            }
+        </script>
+    </body>
+</html>
