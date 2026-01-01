@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Validation Using an API</title>
+    </head>
+    <body>
+        <input id="number" type="number" min="10" max="100" required>
+        <button onclick="validate(number)">OK</button>
+        <p id="errormessage" style="color: white; background-color: black;"></p>
+        <p style="color: white; background-color: red;">If the number is less than 10 or more than 100,
+             an error message will be displayed.
+        </p>
+        <script>
+            function validate(id) {
+                var inputObj = id;
+                if (!inputObj.checkValidity()) {
+                    document.getElementById("errormessage").innerHTML = inputObj.validationMessage;
+                } else {
+                    document.getElementById("errormessage").innerHTML = "Input OK";
+                }
+            }
+        </script>
+    </body>
+</html>
