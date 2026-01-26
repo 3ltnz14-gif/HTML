@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Scope of Variables</title>
+    </head>
+    <body>
+        <h1>Scope of Variables</h1>
+        <p>The variable "a" is 5. It is an universal variable.</p>
+        <p>The variable "b" is 10. It is local.</p>
+        <p id="a"></p>
+        <p id="b"></p>
+        <script>
+            var a = 5;
+            function placeholder(b) {
+                document.getElementById("a").innerHTML = "The variable A = " + a + "."
+                var b = 10
+            }
+            document.getElementById("b").innerHTML = "The variable B = " + b + "."
+        </script>
+    </body>
+</html>

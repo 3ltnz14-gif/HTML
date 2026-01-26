@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A18</title>
+        <link href="" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Title</h1>
+        <p>Paragraph</p>
+        <ul>
+            <li>1st</li>
+            <li>2nd</li>
+            <li>3rd</li>
+        </ul>
+        <a href=""></a>
+        <p>Paragraph</p>
+        <p>Paragraph</p>
+    </body>
+</html>

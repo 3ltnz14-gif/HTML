@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Intro to Javascript</title>
+    </head>
+    <body>
+        <h1 id="myH"></h1>
+        <p id="myP"></p>
+
+        <script>
+            // Comment
+            document.getElementById("myH").innerHTML = "<u>Javascript Comments<u>"
+            document.getElementById("myP").innerHTML = "My first JS paragraph."
+        </script>
+
+        <h1>JS Variables:</h1>
+        <p>Sum of 2 numbers:</p>
+        <p id="result"></p>
+        <p id="result2"></p>
+        <p id="result3"></p>
+        <p id="result4"></p>
+        <p id="result5"></p>
+        <p id="result6"></p>
+        <script>
+            var a = 67;
+            var b = 41;
+            var sum = a + b;
+            var z1 = a - b;
+            var z2 = a * b;
+            var z3 = a / b;
+            var z4 = a % b;
+            var z5 = a += 2;
+            document.getElementById("result").innerHTML
+             = "The sum of 67 + 41 = " + sum + ".";
+            document.getElementById("result2").innerHTML
+             = "The sum of 67 - 41 = " + z1 + ".";
+            document.getElementById("result3").innerHTML
+             = "The sum of 67 * 41 = " + z2 + ".";
+            document.getElementById("result4").innerHTML
+             = "The sum of 67 / 41 = " + z3 + ".";
+            document.getElementById("result5").innerHTML
+             = "The sum of 67% of 41 = " + z4 + ".";
+            document.getElementById("result6").innerHTML
+             = "The sum of 67 + 2 = " + z5 + ".";
+
+        </script>
+
+    </body>
+</html>

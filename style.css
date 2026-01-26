@@ -1,0 +1,40 @@
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: darkblue;
+    color:yellow;
+}
+h1{
+    color: red;
+    font-size: bold;
+}
+p::before {
+    content: "--->"
+}
+p::after{
+    content: "<---"
+}
+p::first-letter{
+    font-size:16px;
+    color: darkorange;
+}
+a{
+    background-color:cyan;
+}
+a:hover {
+    color:red;
+    background-color:green;
+}
+h1 + p {
+    background-color:blue;
+}
+ul li:hover{
+    color: white;
+}
+ul li:nth-child(2) {
+    background-color: white;
+    color:black;
+}
+p:not(:first-of-type){
+    background-color: green;
+    color:lightcyan;
+}

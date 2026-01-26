@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clicker Game - Rainbow Upgrades</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  color: white;
+}
+
+#main {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 5px 20px rgba(255,0,0,0.6);
+  transition: transform 0.1s ease;
+}
+
+#main:active { transform: translate(-50%, -50%) scale(0.95); }
+
+.circular-btn {
+  position: absolute;
+  pointer-events: auto;
+  padding: 6px 10px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.5);
+}
+
+.circular-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.float-text {
+  position: fixed;
+  font-weight: bold;
+  color: white;
+  font-size: 1.2rem;
+  animation: floatUp 0.8s ease-out forwards;
+  pointer-events: none;
+  z-index: 2000;
+}
+
+@keyframes floatUp {
+  0% { opacity: 1; transform: translateY(0) rotate(0deg); }
+  100% { opacity: 0; transform: translateY(-60px) rotate(15deg); }
+}
+
+.stats {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  #main { width: 120px; height: 120px; font-size: 1rem; }
+  .circular-btn { font-size: 0.7rem; padding: 4px 6px; }
+  .stats { font-size: 0.9rem; }
+}
+</style>
+
+<script>
+let clicks = 0;
+let CPC = 1;
+let CPS = 0;
+
+let baseCPCCost = 10;
+let baseCPSCost = 25;
+
+document.addEventListener("DOMContentLoaded", ()=>{
+  const display = document.getElementById("display");
+  const cpcDisplay = document.getElementById("cpcDisplay");
+  const cpsDisplay = document.getElementById("cpsDisplay");
+
+  const bulkOptions = [1,5,10,25,50,100];
+  const circularButtons = [];
+
+  window.buttonClick = function() {
+    addClicks(CPC);
+    updateUI();
+  }
+
+  function addClicks(amount) {
+    clicks += amount;
+    showFloatingParticle("+" + amount);
+  }
+
+  function showFloatingParticle(text) {
+    const span = document.createElement("span");
+    span.className = "float-text";
+    const rect = document.getElementById("main").getBoundingClientRect();
+    const offsetX = Math.floor(Math.random() * 80) - 40;
+    const offsetY = Math.floor(Math.random() * 40) - 20;
+    const rotation = Math.floor(Math.random()*60)-30;
+    span.style.left = rect.left + rect.width/2 + offsetX + "px";
+    span.style.top = rect.top + rect.height/2 + offsetY + "px";
+    span.style.transform = `rotate(${rotation}deg)`;
+    span.innerText = text;
+    document.body.appendChild(span);
+    setTimeout(()=>span.remove(), 800);
+  }
+
+  function initBouncingButtons() {
+    const types = ["CPC","CPS"];
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+    types.forEach(type=>{
+      bulkOptions.forEach(amount=>{
+        const btn = document.createElement("button");
+        btn.className = "circular-btn";
+        btn.dataset.type = type;
+        btn.dataset.amount = amount;
+        btn.onclick = ()=>upgrade(type,amount, parseInt(btn.dataset.cost));
+
+        // Random starting position
+        btn.x = Math.random() * (screenWidth-100);
+        btn.y = Math.random() * (screenHeight-100);
+        // Random velocity
+        btn.vx = (Math.random()*2+1) * (Math.random()<0.5?-1:1);
+        btn.vy = (Math.random()*2+1) * (Math.random()<0.5?-1:1);
+
+        circularButtons.push(btn);
+        document.body.appendChild(btn);
+      });
+    });
+
+    requestAnimationFrame(moveButtons);
+  }
+
+  function moveButtons() {
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+    circularButtons.forEach(btn=>{
+      btn.x += btn.vx;
+      btn.y += btn.vy;
+
+      // Bounce off edges
+      if(btn.x < 0){ btn.x=0; btn.vx*=-1; }
+      if(btn.x + btn.offsetWidth > screenWidth){ btn.x = screenWidth - btn.offsetWidth; btn.vx*=-1; }
+      if(btn.y < 0){ btn.y=0; btn.vy*=-1; }
+      if(btn.y + btn.offsetHeight > screenHeight){ btn.y = screenHeight - btn.offsetHeight; btn.vy*=-1; }
+
+      btn.style.transform = `translate(${btn.x}px, ${btn.y}px)`;
+    });
+
+    requestAnimationFrame(moveButtons);
+  }
+
+  function updateCircularButtons() {
+    // Find max cost for rainbow mapping
+    let maxCost = 0;
+    circularButtons.forEach(btn=>{
+      const type = btn.dataset.type;
+      const amount = parseInt(btn.dataset.amount);
+      const baseCost = type==="CPC"?baseCPCCost:baseCPSCost;
+      const cost = Math.floor(baseCost * Math.pow(amount,0.9));
+      if(cost>maxCost) maxCost = cost;
+    });
+
+    circularButtons.forEach(btn=>{
+      const type = btn.dataset.type;
+      const amount = parseInt(btn.dataset.amount);
+      const baseCost = type==="CPC"?baseCPCCost:baseCPSCost;
+      const cost = Math.floor(baseCost * Math.pow(amount,0.9));
+      btn.dataset.cost = cost;
+
+      // Rainbow color mapping: green (120deg) to red (0deg)
+      const hue = Math.floor(120 - (120*(cost/maxCost)));
+      btn.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
+
+      btn.innerHTML = `${type}+${amount}<br>${cost}`;
+      btn.disabled = clicks < cost;
+    });
+  }
+
+  function upgrade(type, amount, cost){
+    if(clicks>=cost){
+      clicks-=cost;
+      if(type==="CPC") CPC+=amount;
+      else CPS+=amount;
+
+      if(type==="CPC") baseCPCCost = Math.floor(baseCPCCost*1.12);
+      if(type==="CPS") baseCPSCost = Math.floor(baseCPSCost*1.12);
+
+      updateUI();
+    }
+  }
+
+  function updateUI(){
+    display.innerText = clicks;
+    cpcDisplay.innerText = CPC;
+    cpsDisplay.innerText = CPS;
+    updateCircularButtons();
+  }
+
+  // Auto CPS
+  setInterval(()=>{
+    if(CPS>0){ addClicks(CPS); updateUI(); }
+  },1000);
+
+  initBouncingButtons();
+  updateUI();
+});
+</script>
+
+</head>
+
+<body>
+<button id="main" onclick="buttonClick()">Click Me!</button>
+
+<div class="stats">
+  <div>Clicks: <span id="display">0</span></div>
+  <div>CPC: <span id="cpcDisplay">1</span></div>
+  <div>CPS: <span id="cpsDisplay">0</span></div>
+</div>
+</body>
+</html>
+
+
