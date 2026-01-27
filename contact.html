@@ -10,6 +10,10 @@
 
             #topnav {
                 overflow: hidden;
+                top: 0;
+                position: fixed;
+                left: 0;
+                width: 100%;
                 background-color: darkblue;
             }
 
@@ -28,6 +32,47 @@
             #topnav a:active {
                 border: 3px dashed cyan;
             }
+            #footer {
+                position: fixed;
+                overflow: hidden;
+                left: 0;
+                text-align: center;
+                bottom: 0;
+                width: 100%;
+                background-color: darkblue;
+                color: white;
+            }
+
+                        .pimg1, .pimg2, .pimg3 {
+                position: relative;
+                opacity: 0.70;
+                background-position: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            } 
+            .pimg1 {
+                background-image: url("image_3.jpg");
+                min-height: 400px;
+            }
+
+            .pimg2 {
+                background-image: url("dancing-random.gif");
+                min-height: 400px;
+                width: 1000;
+            }
+
+            .pimg3 {
+                background-image: url("man-face-thunb-up-roblox.webp");
+                min-height: 400px;
+            }
+
+            .section-dark {
+                text-align: center;
+                font-size: 21px;
+                padding: 50px 80px;
+                background-color: teal;
+                color: red;
+            }
         </style>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
 
@@ -40,14 +85,7 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
 crossorigin="anonymous"></script>
     </head>
     <body>
-        <div id="topnav">
-            <a href="CapstoneProject.html">Home</a>
-            <a href="aboutus.html">About Us</a>
-            <a href="gallery.html">Gallery</a>
-            <a class="active" href="contact.html">Contact Us</a>
-            <a href="explore.html">Explore</a>
-            <hr>
-        </div>
+
 
         <h1>Contact</h1>
 
@@ -72,6 +110,45 @@ crossorigin="anonymous"></script>
                 <input type="submit" value="Submit">
             </form>
         </fieldset>
+
+        <section class="section section-dark">
+            <h2>Heading</h2>
+            <p>Paragraph</p>
+        </section>
+        
+        <div class="pimg1">
+            <div class="ptext">
+                <span class="border trans">
+                    Text
+                </span>
+            </div>
+        </div>
+
+        <section class="section section-dark">
+            <h2>Heading</h2>
+            <p>Paragraph</p>
+        </section>
+        
+        <div class="pimg2">
+            <div class="ptext">
+                <span class="border trans">
+                    Text
+                </span>
+                </div>
+        </div>
+
+        <section class="section section-dark">
+            <h2>Heading</h2>
+            <p>Paragraph</p>
+        </section>
+        
+        <div class="pimg3">
+            <div class="ptext">
+                <span class="border trans">
+                    Text
+                </span>
+            </div>
+        </div>
 
         <script>
             function validateForm() {
@@ -171,6 +248,21 @@ crossorigin="anonymous"></script>
                     <span class="carousel-control-next-icon"></span>
                 </button>
             </div>
+        
         </div>
+
+        <div id="topnav">
+            <a href="CapstoneProject.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="gallery.html">Gallery</a>
+            <a class="active" href="contact.html">Contact Us</a>
+            <a href="explore.html">Explore</a>
+            <hr>
+        </div>
+
+        <div id="footer">
+            <p>&copy All Rights (not) Reserved By Elijah Tasani</p>
+        </div>
+
     </body>
 </html>
