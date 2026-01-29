@@ -1,0 +1,183 @@
+<html>
+    <head>
+        <title>WebDev Project</title>
+        <style>
+            body {
+                margin: auto;
+                text-align: center;
+                font-family: monospace;
+                background-color: lightblue;
+            }
+
+            #topnav {
+                overflow: hidden;
+                position: fixed;
+                left: 0;
+                text-align: center;
+                top: 0;
+                width: 100%;
+                background-color: darkblue;
+            }
+
+            #topnav a {
+                float: left;
+                color: white;
+                text-align: center;
+                padding: 14px 20px;
+                font-size: 17px;
+            }
+
+            #topnav a:hover {
+                background-color: blue;
+            }
+
+            #topnav a:active {
+                border: 3px dashed cyan;
+            }
+
+            .pimg1, .pimg2, .pimg3 {
+                position: relative;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+
+            .pimg1 {
+                background-image: url("robloxpng.png");
+                min-height: 400px;
+                background-size: 100%; 
+                overflow: hidden;
+            }
+
+            .pimg2 {
+                background-image: url("minecraftjfif.jfif");
+                min-height: 400px;
+                background-size: 100%;
+                background-repeat: repeat;
+                overflow: hidden;
+            }
+
+            .pimg3 {
+                background-image: url("hkwide (1).jpg");
+                min-height: 400px;
+                background-size: 100%;
+                background-repeat: repeat;
+                overflow: hidden;
+            }
+
+            .ptext {
+                text-shadow: black 2px 2px;
+                color: white;
+                margin: auto;
+            }
+
+            .section-dark {
+                text-align: center;
+                font-size: 21px;
+                padding: 5px;
+                background-color: teal;
+                color: red;
+            }
+            #footer {
+                position: fixed;
+                overflow: hidden;
+                left: 0;
+                text-align: center;
+                bottom: 0;
+                width: 100%;
+                background-color: darkblue;
+                color: white;
+            }
+        </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+
+integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+
+crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+        <div id="topnav">
+            <a class="active" href="webdevmainproj.html">My Favourite Games</a>
+            <a href="roblox.html">Roblox</a>
+            <a href="minecraft.html">Minecraft</a>
+            <a href="hkbosses.html">Hollow Knight</a>
+            <hr>
+        </div>
+        <br><br><br><br>
+        <h1>My Favourite Games</h1>
+        <br><br>
+        <table style="text-align: center;" border="2">
+            <tr>
+                <th>Game</th>
+                <th>Playerbase</th>
+                <th>Genre</th>
+            </tr>
+            <tr>
+                <td>Roblox</td>
+                <td>75M</td>
+                <td>All</td>
+            </tr>
+            <tr>
+                <td>Minecraft</td>
+                <td>20M</td>
+                <td>Exploration<br>Adventure</td>
+            </tr>
+        </table>
+
+        <section class="section section-dark">
+            <hr>
+        </section>
+        
+        <div class="pimg1">
+            <div class="ptext"><h1>Roblox</h1><p>Roblox was one of the first games i've ever played. It encourages creativity,
+                 and there is a game for everyone because Roblox is turning into a game engine powered by Lua. Whether it's a 
+                 FPS shooter game, such as "RIVALS" or "Phantom Forces" or maybe a creative game like 
+                 <abbr title="Build A Boat For Treasure">"B.A.B.F.T"</abbr> or "Speed Draw", they've got it all!
+            </p></div>
+        </div>
+
+        <section class="section section-dark">
+            <hr>
+        </section>
+        
+        <div class="pimg2">
+            <div class="ptext"><h1>Minecraft</h1><p>Minecraft was the first notable video game I played. I enjoy all 
+                3 modes, Survival, Hardcore, and Creative. In Survival, you have to eat and survive when at night, 
+                monsters come and attack you. Hardcore is basically Survival, but you only get one life and the 
+                difficulty is set to "Hard". Meanwhile, in Creative, you get infinite resources and invulnerability 
+                so you can build anything your heart desires. There are also minigame servers such as Hypixel, where 
+                you can play fun minigames such as Bedwars and Skywars.
+            </p></div>
+        </div>
+
+        <section class="section section-dark">
+            <hr>
+        </section>
+
+        <div class="pimg3">
+            <div class="ptext">
+                <h1>The Hollow Knight Series</h1><p>
+                This series contains the games "Hollow Knight", and 
+                "Hollow Knight: Silksong." The genre of this series 
+                is Metroidvania, aka 2D Platformer. In this series, 
+                you play as a vessel in the small kingdoms of Hallownest 
+                and Pharloom respectively. You fight off husks possessed 
+                by the Infection/Haunting, and aim to cut it off at its' 
+                core. I enjoy this game because of the captivating gameplay, 
+                and the interesting lore.
+                </p>
+            </div>
+        </div>
+
+        <div id="footer">
+            <p>&copy All Rights (not) Reserved By Elijah Tasani</p>
+        </div>
+
+    </body>
+</html>
